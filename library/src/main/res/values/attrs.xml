@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="XinYuanCompatButtonStyle">
+        <attr name="drawableTint" format="color"/>
+        <attr name="android:drawablePadding"/>
+    </declare-styleable>
+    
+    <declare-styleable name="BannerView">
+        <attr name="itemLayout" format="reference|integer"/>
+        <attr name="recycler" format="boolean"/>
+        <attr name="selectedIndicatorDrawable" format="reference|integer"/>
+        <attr name="unSelectedIndicatorDrawable" format="reference|integer"/>
+        <attr name="indicatorBottom" format="reference|dimension"/>
+        <attr name="indicatorSpace" format="reference|dimension"/>
+    </declare-styleable>
+    
+</resources>
