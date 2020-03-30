@@ -19,10 +19,8 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
-#忽略警告
--ignorewarnings
 -dontusemixedcaseclassnames
 -dontskipnonpubliclibraryclasses
 # Annotation注释不能混淆
 -keepattributes *Annotation*
--keep class com.oris.olog.OLog
+-keep class com.xinyuan522.lib.statusbar.StatusBarCompat

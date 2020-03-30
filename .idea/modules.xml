@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/XinyuanLibs.iml" filepath="$PROJECT_DIR$/.idea/XinyuanLibs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/XinyuanLibs.iml" filepath="$PROJECT_DIR$/.idea/XinyuanLibs.iml" group="XinyuanLibs" />
+      <module fileurl="file://$PROJECT_DIR$/access/access.iml" filepath="$PROJECT_DIR$/access/access.iml" group="XinyuanLibs/access" />
+      <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" group="XinyuanLibs/library" />
+      <module fileurl="file://$PROJECT_DIR$/orisLog/orisLog.iml" filepath="$PROJECT_DIR$/orisLog/orisLog.iml" group="XinyuanLibs/orisLog" />
     </modules>
   </component>
 </project>
