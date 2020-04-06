@@ -37,4 +37,41 @@ public final class OLog {
     public void t(String TAG, String message, Throwable tr) {
         log.t(TAG,message,tr);
     }
+
+    public static class Constants{
+        /**
+         * Priority constant for the println method; use Log.v.
+         */
+        public final int VERBOSE = ILog.VERBOSE;
+
+        /**
+         * Priority constant for the println method; use Log.d.
+         */
+        public final int DEBUG = ILog.DEBUG;
+
+        /**
+         * Priority constant for the println method; use Log.i.
+         */
+        public final int INFO = ILog.INFO;
+
+        /**
+         * Priority constant for the println method; use Log.w.
+         */
+        public final int WARN = ILog.WARN;
+
+        /**
+         * Priority constant for the println method; use Log.e.
+         */
+        public final int ERROR = ILog.ERROR;
+
+        /**
+         * Priority constant for the println method.
+         */
+        public final int ASSERT = ILog.ASSERT;
+
+        /**
+         * Priority constant for the println method.
+         */
+        public final int FETAL = ILog.FETAL;
+    }
 }
