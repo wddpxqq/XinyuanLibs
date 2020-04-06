@@ -2,6 +2,41 @@ package com.oris.olog;
 
 public final class OLog {
 
+    /**
+     * Priority constant for the println method; use Log.v.
+     */
+    public final int VERBOSE = ILog.VERBOSE;
+
+    /**
+     * Priority constant for the println method; use Log.d.
+     */
+    public final int DEBUG = ILog.DEBUG;
+
+    /**
+     * Priority constant for the println method; use Log.i.
+     */
+    public final int INFO = ILog.INFO;
+
+    /**
+     * Priority constant for the println method; use Log.w.
+     */
+    public final int WARN = ILog.WARN;
+
+    /**
+     * Priority constant for the println method; use Log.e.
+     */
+    public final int ERROR = ILog.ERROR;
+
+    /**
+     * Priority constant for the println method.
+     */
+    public final int ASSERT = ILog.ASSERT;
+
+    /**
+     * Priority constant for the println method.
+     */
+    public final int FETAL = ILog.FETAL;
+
     private static LogImpl log = null;
 
     private static class Holder{
@@ -38,40 +73,4 @@ public final class OLog {
         log.t(TAG,message,tr);
     }
 
-    public static class Constants{
-        /**
-         * Priority constant for the println method; use Log.v.
-         */
-        public final int VERBOSE = ILog.VERBOSE;
-
-        /**
-         * Priority constant for the println method; use Log.d.
-         */
-        public final int DEBUG = ILog.DEBUG;
-
-        /**
-         * Priority constant for the println method; use Log.i.
-         */
-        public final int INFO = ILog.INFO;
-
-        /**
-         * Priority constant for the println method; use Log.w.
-         */
-        public final int WARN = ILog.WARN;
-
-        /**
-         * Priority constant for the println method; use Log.e.
-         */
-        public final int ERROR = ILog.ERROR;
-
-        /**
-         * Priority constant for the println method.
-         */
-        public final int ASSERT = ILog.ASSERT;
-
-        /**
-         * Priority constant for the println method.
-         */
-        public final int FETAL = ILog.FETAL;
-    }
 }
