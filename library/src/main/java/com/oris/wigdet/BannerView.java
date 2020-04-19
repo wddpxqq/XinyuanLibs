@@ -1,4 +1,4 @@
-package com.xinyuan522.lib.wigdet;
+package com.oris.wigdet;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -22,7 +22,7 @@ import androidx.recyclerview.widget.PagerSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.xinyuan522.library.R;
+import com.oris.library.R;
 
 import java.util.List;
 import java.util.concurrent.Executors;
@@ -101,7 +101,7 @@ public class BannerView extends FrameLayout {
     }
 
     public void setOnItemViewClickListener(ItemViewClickListener listener){
-        this.itemViewClickListener = listener;
+        itemViewClickListener = listener;
     }
 
     private void initRecyclerView(Context context) {
@@ -254,7 +254,7 @@ public class BannerView extends FrameLayout {
         }
     }
 
-    private final class BannerAdapter<T> extends RecyclerView.Adapter<BannerViewHolder> {
+    class BannerAdapter<T> extends RecyclerView.Adapter<BannerViewHolder> {
 
         private List<T> mData;
         private Context context;
@@ -298,7 +298,7 @@ public class BannerView extends FrameLayout {
         }
     }
 
-    private final class BannerViewHolder extends RecyclerView.ViewHolder {
+    class BannerViewHolder extends RecyclerView.ViewHolder {
         public ImageView imageView;
         public BannerViewHolder(View view) {
             super(view);

@@ -1,4 +1,4 @@
-package com.xinyuan522.lib;
+package com.oris.wigdet;
 
 import android.content.Context;
 import android.graphics.Rect;

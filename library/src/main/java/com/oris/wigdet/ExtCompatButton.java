@@ -1,4 +1,4 @@
-package com.xinyuan522.lib;
+package com.oris.wigdet;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -15,13 +15,13 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.graphics.drawable.DrawableCompat;
 
-import com.xinyuan522.library.R;
+import com.oris.library.R;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
-public class XinYuanCompatButton extends AppCompatButton {
+public class ExtCompatButton extends AppCompatButton {
     private static final String DELIMITERS = "\n";
     private static final int DRAWABLE_LEFT_POSITION = 0;
     private static final int DRAWABLE_TOP_POSITION = 1;
@@ -35,17 +35,17 @@ public class XinYuanCompatButton extends AppCompatButton {
     private int mLeftPadding;
     private int mRightPadding;
 
-    public XinYuanCompatButton(Context context) {
+    public ExtCompatButton(Context context) {
         super(context);
         init(context, null);
     }
 
-    public XinYuanCompatButton(Context context, AttributeSet attrs) {
+    public ExtCompatButton(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context, attrs);
     }
 
-    public XinYuanCompatButton(Context context, AttributeSet attrs, int defStyleAttr) {
+    public ExtCompatButton(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context, attrs);
     }

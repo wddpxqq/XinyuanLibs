@@ -1,4 +1,4 @@
-package com.xinyuan522.lib.statusbar;
+package com.oris.libs.statusbar;
 
 import android.content.Context;
 import android.content.res.Resources;

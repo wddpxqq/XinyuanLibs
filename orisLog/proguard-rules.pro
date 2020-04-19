@@ -19,47 +19,38 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
-#指定压缩级别
--optimizationpasses 4
 
-#不跳过非公共的库的类成员
+# 混淆时不使用大小写混合，混淆后的类名为小写
+-dontusemixedcaseclassnames
+# 指定不去忽略非公共库的类
+-dontskipnonpubliclibraryclasses
+# 指定不去忽略非公共库的成员
 -dontskipnonpubliclibraryclassmembers
-
-#混淆时采用的算法
--optimizations !code/simplification/arithmetic,!field/*,!class/merging/*
-
-#把混淆类中的方法名也混淆了
--useuniqueclassmembernames
-
-#优化时允许访问并修改有修饰符的类和类的成员
--allowaccessmodification
-
-#将文件来源重命名为“SourceFile”字符串
--renamesourcefileattribute SourceFile
-#保留行号
--keepattributes SourceFile,LineNumberTable
-#保持泛型
+# 混淆时不做预校验
+-dontpreverify
+# 混淆时不记录日志
+#-verbose
+# 忽略警告
+-ignorewarning
+# 代码优化
+#-dontshrink
+# 不优化输入的类文件
+#-dontoptimize
+# 保留注解不混淆
+-keepattributes *Annotation*,InnerClasses
+# 避免混淆泛型
 -keepattributes Signature
-
-#保持所有实现 Serializable 接口的类成员
--keepclassmembers class * implements java.io.Serializable {
-    static final long serialVersionUID;
-    private static final java.io.ObjectStreamField[] serialPersistentFields;
-    private void writeObject(java.io.ObjectOutputStream);
-    private void readObject(java.io.ObjectInputStream);
-    java.lang.Object writeReplace();
-    java.lang.Object readResolve();
-}
-
-#Fragment不需要在AndroidManifest.xml中注册，需要额外保护下
--keep public class * extends android.support.v4.app.Fragment
--keep public class * extends android.app.Fragment
-
-# 保持测试相关的代码
--dontnote junit.framework.**
--dontnote junit.runner.**
--dontwarn android.test.**
--dontwarn android.support.test.**
--dontwarn org.junit.**
+# 保留代码行号，方便异常信息的追踪
+-keepattributes SourceFile,LineNumberTable
+# 混淆采用的算法
+-optimizations !code/simplification/cast,!field/*,!class/merging/*
+# dump.txt文件列出apk包内所有class的内部结构
+-dump class_files.txt
+# seeds.txt文件列出未混淆的类和成员
+-printseeds seeds.txt
+# usage.txt文件列出从apk中删除的代码
+-printusage unused.txt
+# mapping.txt文件列出混淆前后的映射
+-printmapping mapping.txt
 
 -keep class com.oris.olog.OLog
