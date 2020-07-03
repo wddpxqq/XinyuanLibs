@@ -18,8 +18,7 @@ android {
             minifyEnabled true
             zipAlignEnabled true
             shrinkResources false
-            proguardFiles 'proguard-android-optimize.txt'
-            proguardFiles  'proguard-rules'
+            proguardFiles  'proguard-rules.pro'
         }
     }
 }
