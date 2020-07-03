@@ -36,12 +36,15 @@ class BleManager {
     companion object {
         val instance = SingletonHolder.holder
         fun init(context: Context, deviceName:List<String>) {
-            instance.supportDevices = deviceName
-            instance.mContext = context
-            instance.mBluetoothManager = ContextCompat.getSystemService(context,BluetoothManager::class.java)
-            instance.mBluetoothAdapter = instance.mBluetoothManager?.adapter
-            instance.registerReceiver()
+            with(instance){
+                supportDevices = deviceName
+                mContext = context
+                mBluetoothManager = ContextCompat.getSystemService(context,BluetoothManager::class.java)
+                mBluetoothAdapter = instance.mBluetoothManager?.adapter
+                registerReceiver()
+            }
         }
+
 
         fun startDiscovery() {
             OLog.d(TAG, "startDiscovery")
@@ -100,9 +103,8 @@ class BleManager {
                     addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 })
                 return false
-            }else{
+            }else
                 mBluetoothLeScanner = instance.mBluetoothAdapter?.bluetoothLeScanner
-            }
         }
         return true
     }
@@ -115,6 +117,12 @@ class BleManager {
     private fun discovery() {
         OLog.i(TAG, "BleManager start discovery adapter = ${mBluetoothAdapter!=null}")
         mBluetoothAdapter?.let {
+            if(it.bondedDevices.isNotEmpty()){
+                it.bondedDevices.forEach {itBonded->
+                    OLog.i(TAG, "BleManager bondedDevices ${itBonded.name} ${itBonded.address}")
+                }
+
+            }
             if (it.isDiscovering) {
                 mBluetoothLeScanner?.stopScan(mBluetoothLeScannerCallback)
             }
